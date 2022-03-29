@@ -2,7 +2,7 @@
 {
     public class Taxi
     {
-        public string? DriverName { get; set; }
+        public string DriverName { get; set; }
         public bool OnDuty { get; set; }
         public int NumPassengger { get; set; }
         public void TaxiInfo()
@@ -13,11 +13,11 @@
         }
         public void PickupPassenger()
         {
-            Console.WriteLine($"{DriverName} sedang menjemput penumpang");
+            if (OnDuty) Console.WriteLine($"{DriverName} sedang menjemput penumpang");
         }
         public void DropOffPassenger()
         {
-            Console.WriteLine($"{DriverName} selesai mengantar penumpang");
+            if (OnDuty) Console.WriteLine($"{DriverName} selesai mengantar penumpang");
         }
     }
 }
